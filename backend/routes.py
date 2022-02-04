@@ -1,6 +1,6 @@
-# from flask import current_app,jsonify,request
-# from app import create_app,db
-# from models import Articles,articles_schema
+from flask import current_app,jsonify,request
+from app import create_app,db
+from models import Articles,articles_schema
 
 # Create an application instance
 app = create_app()

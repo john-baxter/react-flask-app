@@ -1,5 +1,5 @@
-# from app import db,ma
-# from datetime import datetime
+from app import db,ma
+from datetime import datetime
 
 class Articles(db.Model):
     id = db.Column(db.Integer, primary_key=True)
