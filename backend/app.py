@@ -11,3 +11,18 @@ ma = Marshmallow()
 cors = CORS()
 
 
+def create_app():
+  """Application-factory pattern"""
+  app = Flask(__name__)
+  app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
+  app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+  
+  # Initialise extensions
+  # To use the application instances above, instantiate with an application:
+  db.init_app(app)
+  migrate.init_app(app, db)
+  ma.init_app(app)
+  cors.init_app(app)
+  
+  return app
+
